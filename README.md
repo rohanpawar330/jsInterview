@@ -14,10 +14,12 @@
 * [Encapsulation](#encapsulation)
 * [Directive & Component & Pipes](#directive--component--pipes)
 
-## js work [[^]](#jsinterview)
+[[^]](#jsinterview)
+## js work 
 
 
-## http vs https [[^]](#jsinterview)
+[[^]](#jsinterview)
+## http vs https 
 
 <b>HTTP vs HTTPS</b> : HTTP stands for Hypertext Transfer Protocol,used for transferring data over a network. Most information that is sent over the Internet, including website content and API calls, uses the HTTP protocol. 
 An HTTP request is just a series of lines of text that follow the HTTP protocol. A GET request might look like
@@ -60,7 +62,8 @@ This prevents or helps block a number of attacks that are possible when there is
 * BGP hijacking
 * Domain spoofing
 
-## Javascript is single-threaded [[^]](#jsinterview)
+[[^]](#jsinterview)
+## Javascript is single-threaded 
 
 _JavaScript_ is called a ***"single-threaded"*** language because it can only execute one piece of code at a time. This means that if one function is running, it has to finish before another function can start.
 
@@ -70,7 +73,8 @@ JavaScript code must be written in a way that avoids long-running or blocking op
 
 JavaScript is single-threaded, it can still make use of asynchronous operations like _callbacks, promises, and async/await_ to handle multiple tasks without blocking the main thread. Additionally, modern web browsers have introduced Web Workers, which allow JavaScript code to run in separate threads for heavy computation, but these are still relatively limited in use.
 
-## web-workers [[^]](#jsinterview)
+[[^]](#jsinterview)
+## web-workers 
 
 Web Workers are a browser feature that allows you to run JavaScript code in a separate background thread from the main UI thread of the web page. This means that you can execute heavy, long-running JavaScript code in the background, without blocking the user interface and making the web page unresponsive.
 
@@ -114,7 +118,8 @@ function performLongRunningTask() {
 
 ```
 
-## null vs undefined [[^]](#jsinterview)
+[[^]](#jsinterview)
+## null vs undefined 
 
 **null** and **undefined** are both special values that represent absence of a value, but they are not the same thing.
 
@@ -147,7 +152,8 @@ console.log(obj.prop2); // output: null
 
 **It's important to note that null is an object in JavaScript, whereas undefined is a primitive value. This means that null can be assigned to an object, but not to a primitive type like a number or a string.
 
-## Http methods [[^]](#jsinterview)
+[[^]](#jsinterview)
+## Http methods 
 
 HTTP (Hypertext Transfer Protocol) is a protocol used for communication between web servers and web clients (such as browsers). HTTP defines a set of methods, also known as verbs, that indicate the action to be performed on the specified resource. The most common HTTP methods are:
 
@@ -163,7 +169,8 @@ HTTP (Hypertext Transfer Protocol) is a protocol used for communication between 
 
 Each HTTP method has a specific set of rules and restrictions for how it should be used, and each method is associated with a specific set of status codes that indicate the outcome of the request. For example, a successful GET request typically results in a 200 OK status code, while a failed POST request might result in a 400 Bad Request or 500 Internal Server Error status code, depending on the nature of the error.
 
-## Put vs Post http request [[^]](#jsinterview)
+[[^]](#jsinterview)
+## Put vs Post http request 
 
 PUT and POST are both HTTP methods used to send data to a server in JavaScript and other programming languages, but they have different purposes and usage.
 
@@ -205,7 +212,8 @@ In this example, we are creating a new post on the jsonplaceholder API using a P
 
 In general, you should use PUT when you want to update an existing resource, and use POST when you want to create a new resource. 
 
-## call, apply & bind [[^]](#jsinterview)
+[[^]](#jsinterview)
+## call, apply & bind 
 
 
 call, bind, and apply are three methods available on JavaScript function objects, which allow you to call or apply a function with a specific this value and arguments.
@@ -319,7 +327,8 @@ const result2 = multiplyByTen(3);
 console.log(result2); // Output: 30
 ```
 
-## SOLID principals in js  [[^]](#jsinterview)
+[[^]](#jsinterview)
+## SOLID principals in js  
 
 https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898
 
@@ -355,12 +364,14 @@ In JavaScript, the SOLID principles can help you write clean and maintainable co
 
 ------------------------------------------
 
-## jit & aot [[^]](#jsinterview)
+[[^]](#jsinterview)
+## jit & aot 
 https://www.geeksforgeeks.org/what-is-aot-and-jit-compiler-in-angular/
 
 
 
-## providerIn in angular [[^]](#jsinterview)
+[[^]](#jsinterview)
+## providerIn in angular 
 
 we dont need to regester the service manually in providers at globally or compnoent level,but now we don't need to regester it everywhere it'll automatically loaded where (in which compoenent it's) used, this is a great benifit when there is `n` number of service so it'll be possible sometimes that we forgot to regester in provider,
 
@@ -370,9 +381,11 @@ previously it's happening that when we provide it in providers array it'll load 
 
 This has improved loading time...by not loading all service at once only when it;s associated component or module is loaded it's instance created.
 
-## eager & lazy loading [[^]](#jsinterview)
+[[^]](#jsinterview)
+## eager & lazy loading 
 
-## Change detection in angular [[^]](#jsinterview)
+[[^]](#jsinterview)
+## Change detection in angular 
 
 When you change any of your models, Angular detects the changes and immediately updates the views. This is change detection in Angular. The purpose of this mechanism is to make sure the underlying views are always in sync with their corresponding models.
 
@@ -438,7 +451,8 @@ In this component, we have a myArray property of type string[]. When the updateA
 
 It's important to note that change detection for reference types can be a performance bottleneck, especially for large objects or arrays, because Angular has to check the memory address of each reference type during each change detection cycle. To optimize performance, you can use immutable objects or implement the OnPush change detection strategy, which can reduce the number of checks performed during change detection.
 
-## Encapsulation  [[^]](#jsinterview)
+[[^]](#jsinterview)
+## Encapsulation  
 
 In Angular, a component is a basic building block that encapsulates a specific part of the application's functionality. A component consists of a template, which defines the layout and structure of the component, and a TypeScript class, which contains the logic for the component.
 
@@ -469,7 +483,8 @@ When we run this application, we will find h1 style from AppComponent is not app
 <br /><br />
 Examining it on the browser, Angular has created style in head section of the DOM and given an arbitrary ID to the component. On basis of ID, selector style is scoped to the component.
 
-## Directive & Component & Pipes [[^]](#jsinterview)
+[[^]](#jsinterview)
+## Directive & Component & Pipes 
 
 In Angular, the Component is the one that provides data to the view. It is used to create a new View(Shadow DOM) with attached behavior. Directives in Angular are primarily used to add additional behavior to an existing DOM element or an existing component instance.
 
