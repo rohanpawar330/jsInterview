@@ -14,7 +14,7 @@
 * [Encapsulation](#encapsulation)
 * [Directive & Component & Pipes](#directive--component--pipes)
 
-[[^]](#jsinterview)
+
 ## js work 
 
 
