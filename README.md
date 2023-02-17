@@ -424,5 +424,39 @@ In this component, we have a myArray property of type string[]. When the updateA
 
 It's important to note that change detection for reference types can be a performance bottleneck, especially for large objects or arrays, because Angular has to check the memory address of each reference type during each change detection cycle. To optimize performance, you can use immutable objects or implement the OnPush change detection strategy, which can reduce the number of checks performed during change detection.
 
+## Encapsulation 
 
+In Angular, a component is a basic building block that encapsulates a specific part of the application's functionality. A component consists of a template, which defines the layout and structure of the component, and a TypeScript class, which contains the logic for the component.
 
+By default, Angular components use a feature called "view encapsulation" to hide the implementation details of the component's template and styles from the rest of the application. This means that the component's styles are scoped to the component's template, and cannot be applied to other parts of the applicationy
+
+![encapsulation](https://miro.medium.com/v2/resize:fit:828/format:webp/1*-NoQdX9CsV1jeKLg9fPsng.png)
+
+1. None : In ViewEncapsulation.None option,
+There is no Shadow DOM.
+Style is not scoped to component.
+<br /><br />So when we run the application, h1 style will be applied to both the components even though we have only set style in AppComponent. It happens due to NONE option.
+<br /><br />
+In the browser, when we examine source code, we will find that h1 style has been declared in the head section of DOM. Thus, having no Shadow DOM and also style not scoped to the component, it affects all nodes of the DOM.
+
+2. Native ( ShadowDom ): Native keyword is removed from ng v6 In ViewEncapsulation.ShadowDOM option,
+Style is scoped to the component.
+Angular will create Shadow DOM for the component.
+<br /><br />
+Applying Shadow Dom and using AppChildComponent as child inside template of AppComponent, we can find that h1 style is applied to both components even though we have only set style in AppComponent.
+<br /><br />
+In the browser, when we examine source code, we will find Shadow DOM is created for AppComponent and style is also applied to its child component.
+
+3. Emulated : is default mode in Angular where:
+Angular will not create Shadow DOM for component.
+Style will be scoped to the component.
+<br /><br />
+When we run this application, we will find h1 style from AppComponent is not applied to h1 of AppChildComponent because of emulated scoping. In this option, Angular only emulates to Shadow DOM and does not create a real Shadow DOM. Hence, styles are only scoped to the component.
+<br /><br />
+Examining it on the browser, Angular has created style in head section of the DOM and given an arbitrary ID to the component. On basis of ID, selector style is scoped to the component.
+
+## Directive & Component & Pipes
+
+In Angular, the Component is the one that provides data to the view. It is used to create a new View(Shadow DOM) with attached behavior. Directives in Angular are primarily used to add additional behavior to an existing DOM element or an existing component instance.
+
+ Pipes are for formatting data, and directives are to alter the behavior/appearance of an element
