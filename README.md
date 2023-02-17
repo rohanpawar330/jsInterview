@@ -1,5 +1,19 @@
 # jsInterview
 
+* [HTTP vs HTTPS](#http-vs-https)
+* [Http methods](#http-methods)
+* [Javascript is single-threaded](#javascript-is-single-threaded)
+* [web-workers](#web-workers)
+* [null vs undefined](#null-vs-undefined)
+* [Put vs Post http request](#put-vs-post-http-request)
+* [call, apply & bind](#call-apply--bind)
+* [SOLID principals in js](#solid-principals-in-js)
+* [jit & aot](#jit--aot)
+* [ProvidedIn in Angular](#providerin-in-angular)
+* [Change detection in angular](#change-detection-in-angular)
+* [Encapsulation](#encapsulation)
+* [Directive & Component & Pipes](#directive--component--pipes)
+
 ## js work
 
 
@@ -307,6 +321,8 @@ console.log(result2); // Output: 30
 
 ## SOLID principals in js
 
+https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898
+
 The SOLID principles are a set of guidelines for writing maintainable and scalable software. 
 
 1. Single Responsibility Principle (SRP): A class or function should have only one reason to change. In JavaScript, this means that a function or object should have a single, well-defined purpose.
@@ -358,9 +374,103 @@ This has improved loading time...by not loading all service at once only when it
 
 ## Change detection in angular
 
+When you change any of your models, Angular detects the changes and immediately updates the views. This is change detection in Angular. The purpose of this mechanism is to make sure the underlying views are always in sync with their corresponding models.
+
+The change detection cycle is always performed once for every detected change and starts from the root change detector and goes all the way down in a sequential fashion. This sequential design choice is nice because it updates the model in a predictable way since we know component data can only come from its parent.
+
+The change detectors provide a way to keep track of the component’s previous and current states as well as its structure in order to report changes to Angular.
+
 There are two strategies for change detection in Angular:
 
 * **Default change detection strategy**: In this strategy, Angular checks for changes to all components and directives in the application on every change detection cycle. This can be inefficient in large applications with many components.
 
 * **OnPush change detection strategy**: In this strategy, Angular only checks for changes to a component or directive when its input properties have changed or an event has been triggered. This can improve performance in some cases, but requires more careful management of component state and inputs.
 
+
+For OnPush :-
+
+change detection works differently for **value types and reference types**.
+
+For value types, such as numbers, booleans, and strings, Angular can detect changes by comparing the current value with the previous value. If the values are different, Angular will mark the component and its child components as dirty and trigger change detection. This is because value types are immutable and cannot be changed in place.
+
+For example, consider the following component:
+
+```
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-component',
+  template: '{{ myValue }}'
+})
+export class MyComponent {
+  myValue: string = 'initial value';
+
+  updateValue() {
+    this.myValue = 'new value';
+  }
+}
+```
+
+In this component, we have a `myValue` property of type string. When the `updateValue()` method is called, we assign a new value to `myValue`. Because myValue is a value type, Angular can detect the change and update the view with the new value.
+
+For reference types, such as objects and arrays, Angular cannot detect changes by comparing the current value with the previous value. This is because reference types are mutable and can be changed in place.
+
+To detect changes for reference types, Angular uses a technique called "object identity", which compares the memory address of the object or array with the previous memory address. If the memory address is different, Angular will mark the component and its child components as dirty and trigger change detection.
+
+For example, consider the following component:
+
+```
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-component',
+  template: '{{ myArray }}'
+})
+export class MyComponent {
+  myArray: string[] = ['initial', 'values'];
+
+  updateArray() {
+    this.myArray.push('new value');
+  }
+}
+```
+In this component, we have a myArray property of type string[]. When the updateArray() method is called, we push a new value onto the myArray array. Because myArray is a reference type, Angular cannot detect the change by comparing the current value with the previous value. Instead, Angular uses object identity to detect the change by comparing the memory address of the myArray array with the previous memory address. If the memory address is different, Angular will mark the component and its child components as dirty and trigger change detection.
+
+It's important to note that change detection for reference types can be a performance bottleneck, especially for large objects or arrays, because Angular has to check the memory address of each reference type during each change detection cycle. To optimize performance, you can use immutable objects or implement the OnPush change detection strategy, which can reduce the number of checks performed during change detection.
+
+## Encapsulation 
+
+In Angular, a component is a basic building block that encapsulates a specific part of the application's functionality. A component consists of a template, which defines the layout and structure of the component, and a TypeScript class, which contains the logic for the component.
+
+By default, Angular components use a feature called "view encapsulation" to hide the implementation details of the component's template and styles from the rest of the application. This means that the component's styles are scoped to the component's template, and cannot be applied to other parts of the applicationy
+
+![encapsulation](https://miro.medium.com/v2/resize:fit:828/format:webp/1*-NoQdX9CsV1jeKLg9fPsng.png)
+
+1. None : In ViewEncapsulation.None option,
+There is no Shadow DOM.
+Style is not scoped to component.
+<br /><br />So when we run the application, h1 style will be applied to both the components even though we have only set style in AppComponent. It happens due to NONE option.
+<br /><br />
+In the browser, when we examine source code, we will find that h1 style has been declared in the head section of DOM. Thus, having no Shadow DOM and also style not scoped to the component, it affects all nodes of the DOM.
+
+2. Native ( ShadowDom ): Native keyword is removed from ng v6 In ViewEncapsulation.ShadowDOM option,
+Style is scoped to the component.
+Angular will create Shadow DOM for the component.
+<br /><br />
+Applying Shadow Dom and using AppChildComponent as child inside template of AppComponent, we can find that h1 style is applied to both components even though we have only set style in AppComponent.
+<br /><br />
+In the browser, when we examine source code, we will find Shadow DOM is created for AppComponent and style is also applied to its child component.
+
+3. Emulated : is default mode in Angular where:
+Angular will not create Shadow DOM for component.
+Style will be scoped to the component.
+<br /><br />
+When we run this application, we will find h1 style from AppComponent is not applied to h1 of AppChildComponent because of emulated scoping. In this option, Angular only emulates to Shadow DOM and does not create a real Shadow DOM. Hence, styles are only scoped to the component.
+<br /><br />
+Examining it on the browser, Angular has created style in head section of the DOM and given an arbitrary ID to the component. On basis of ID, selector style is scoped to the component.
+
+## Directive & Component & Pipes
+
+In Angular, the Component is the one that provides data to the view. It is used to create a new View(Shadow DOM) with attached behavior. Directives in Angular are primarily used to add additional behavior to an existing DOM element or an existing component instance.
+
+ Pipes are for formatting data, and directives are to alter the behavior/appearance of an element
