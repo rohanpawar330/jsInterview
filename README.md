@@ -1,5 +1,19 @@
 # jsInterview
 
+* [HTTP vs HTTPS](#http-vs-https)
+* [Http methods](#http-methods)
+* [Javascript is single-threaded](#javascript-is-single-threaded)
+* [web-workers](#web-workers)
+* [null vs undefined](#null-vs-undefined)
+* [Put vs Post http request](#put-vs-post-http-request)
+* [call, apply & bind](#call-apply--bind)
+* [SOLID principals in js](#solid-principals-in-js)
+* [jit & aot](#jit--aot)
+* [ProvidedIn in Angular](#providerin-in-angular)
+* [Change detection in angular](#change-detection-in-angular)
+* [Encapsulation](#encapsulation)
+* [Directive & Component & Pipes](#directive--component--pipes)
+
 ## js work
 
 
