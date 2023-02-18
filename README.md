@@ -13,7 +13,18 @@
 * [Change detection in angular](#change-detection-in-angular)
 * [Encapsulation](#encapsulation)
 * [Directive & Component & Pipes](#directive--component--pipes)
-
+* [Promise vs Observables](#promise-vs-observables)
+* [Generic Type in Typescript](#generic-type-in-typescript)
+* [Interface](#interface)
+* [Type vs Interface](#type-vs-interface)
+* [DOM](#dom)
+* [CSS Framework](#css-framework)
+* [Display Flex](#display-flex)
+* [Display Properties](#display-properties)
+* [CSS BOX Model](#css-box-model)
+* [Position Properties](#position-properties)
+* [Pseudo element & pseudo class](#pseudo-element--pseudo-class)
+* [Angular bootstrap](#angular-bootstrap)
 
 ## js work 
 
@@ -488,4 +499,570 @@ Examining it on the browser, Angular has created style in head section of the DO
 
 In Angular, the Component is the one that provides data to the view. It is used to create a new View(Shadow DOM) with attached behavior. Directives in Angular are primarily used to add additional behavior to an existing DOM element or an existing component instance.
 
- Pipes are for formatting data, and directives are to alter the behavior/appearance of an element
+ Pipes are for formatting data, and directives are to alter the behavior/appearance of an element.
+
+ **Pipes**
+ _here (default is `true`)_
+ Are used to transform the data before it is displayed on the view. Pipes can be used to format numbers, dates, and strings, filter and sort arrays, and more.
+
+ Custom pipe example : 
+
+ ```
+ items = [  { name: 'apple', category: 'fruit' },
+    { name: 'banana', category: 'fruit' }, 
+    { name: 'carrot', category: 'vegetable' },  
+    { name: 'pepper', category: 'vegetable' }, 
+    { name: 'orange', category: 'fruit' }];
+```
+
+```
+<ul>
+  <li *ngFor="let item of items | filter: 'fruit'">{{ item.name }}</li>
+</ul>
+```
+```
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'filter'
+})
+export class FilterPipe implements PipeTransform {
+  transform(items: any[], filter: string): any {
+    if (!items || !filter) {
+      return items;
+    }
+
+    return items.filter(item => item.category === filter);
+  }
+}
+```
+the `transform` method takes an array of objects (items) and a filter value (filter) as input. The method filters the items array based on the category property and returns a new array containing only the items that match the filter criteria.
+
+Pure Pipe :
+</br>
+* Pure pipes in angular are the pipes that execute when it detects a pure change in the input value.
+* A pure change is when the change detection cycle detects a change to either a primitive input value (such as String, Number, Boolean, or Symbol) or object reference (such as Date, Array, Function, or Object) 
+
+Use this by : 
+```
+@Pipe({
+  name: 'purePipe',
+  pure: true      
+})
+export class PurePipe {}
+```
+
+Impure Pipes:
+</br>
+* Impure pipes in angular are the pipes that execute when it detects an impure change in the input value. 
+* An impure pipe is called on every change detection cycle in Angular. It is called on every digest cycle irrespective of the change in the input or value. If we need some pipe to be called on every change detection, mark the pipe as impure. In the case of impure pipes, Angular will call the transform() method on every change cycle
+```
+@Pipe({
+  name: 'purePipe',
+  pure: false      
+})
+export class PurePipe {}
+```
+
+**Directive** :
+directives are used to add custom behavior to an element or to modify the behavior of an existing element. Directives can be used to manipulate the DOM, add or remove attributes, or to apply custom styling.
+
+</br>
+* Components	Used with a template. This type of directive is the most common directive type.
+* Attribute directives	Change the appearance or behavior of an element, component, or another directive. `ngStyle,ngClass`
+* Structural directives	Change the DOM layout by adding and removing DOM elements. `ngIf,ngFor,ngSwitch`
+
+**ngFor** Reduce the number of calls your application makes to the server by tracking changes to an item list. With the *ngFor trackBy property, Angular can change and re-render only those items that have changed, rather than reloading the entire list of items.
+
+```
+<div *ngFor="let item of items; trackBy: trackByItems">
+  ({{item.id}}) {{item.name}}
+</div>
+```
+
+1. Component Directives: Component directives are used to create a custom reusable component with its own template, styles, and behavior. They are created using the @Component decorator and can be used in your templates by adding the custom element to the template. Here's an example of how to create a simple component directive:
+
+custom directive
+```
+import { Directive, ElementRef } from '@angular/core';
+
+@Directive({
+  selector: '[myDirective]'
+})
+export class MyDirective {
+  constructor(private el: ElementRef) {
+    el.nativeElement.style.backgroundColor = 'yellow';
+  }
+}
+```
+
+[[^]](#jsinterview)
+## Promise vs Observables
+
+Both are used to handle async data...
+**Promise** :  Promise works by taking a function with (optionally) two arguments resolve and reject. The passed in function executes some async code and either resolves or rejects,  Once the Promise resolves, its `.then()` method executes a handler function with the emitted value. if rejects it's get in `.catch()`.
+
+```
+let promise = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("some value")
+  }, 1000`)
+})
+
+promise.then(value => {
+  console.log(value)
+})
+```
+</br>
+**Observables** : Observables (in the JavaScript context) are the RxJS implementation of the observer design pattern. Observables are an alternative to Promises for handling async activity:
+
+```
+const { Observable } = require('rxjs');
+
+let observable = new Observable((observer) => {
+  setTimeout(() => {
+    observer.next("some value")
+  }, 1000)
+})
+
+observable.subscribe(value => {
+  console.log(value)
+})
+```
+
+
+*
+A Promise emits a single value:
+```
+let promise = new Promise((resolve) => {
+  resolve("a")
+  resolve("b")
+})
+
+promise.then(value => console.log(value))
+
+a
+```
+An Observable can emit multiple values:
+
+```
+let observable = new Observable((observer) => {
+  observer.next("a")
+  observer.next("b")
+})
+
+observable.subscribe(value => {
+  console.log(value)
+})
+
+a
+a
+```
+* 
+Eager Loading A Promise executes the moment it is defined:
+```
+let promise = new Promise((resolve) => {
+  console.log("promise is running")
+  resolve("a")
+})
+
+console.log("start")
+promise.then(value => console.log(value))
+console.log("end")
+
+promise is running
+start
+end
+a
+```
+
+Lazy Loading An Observable executes only when subscribe() is called:
+
+```
+let observable = new Observable((observer) => {
+  console.log("observable is running")
+  observer.next("a")
+})
+
+console.log("start")
+observable.subscribe(value => console.log(value))
+console.log("end")
+
+
+start
+observable is running
+a
+end
+```
+*
+A Promise can't be canceled. 
+An Observable can be canceled via unsubscribe():
+```
+let observable = new Observable((observer) => {
+  setTimeout(() => {
+    console.log("calling next")
+    observer.next("a")
+  }, 1000)
+})
+
+sub = observable.subscribe(value => console.log(value))
+sub.unsubscribe()
+```
+*
+A Promise is unicast meaning you get the same value every time you call the async flow:
+
+```
+let promise = new Promise((resolve) => {
+    resolve(Math.random())
+})
+
+promise.then(value => console.log(value))
+promise.then(value => console.log(value))
+
+0.768598539600432
+```
+
+An Observable is multicast meaning a separate execution occurs for every call to subscribe:
+
+```
+let observable = new Observable((observer) => {
+  observer.next(Math.random())
+})
+
+observable.subscribe(value => console.log(value))
+observable.subscribe(value => console.log(value))
+
+0.6964325798899575
+0.5931491554914805
+```
+*
+The ES6 Promise doesn't have anything comparable to these operator functions...
+
+
+Observables also comes with a bunch of operators which are functions that can be applied to observables. Using RxJS, you can apply functions like map() and filter() to values emitted by observables.
+
+[[^]](#jsinterview)
+## Generic Type in Typescript
+
+ Generics allow you to create reusable components that can work with a variety of types. Generics are a way to define a type or function that can work with multiple types of data, without specifying the actual type until the code is used.
+ 
+ </br>
+
+In this example, the `firstElementBad` function accepts an array of `any` type and returns an `any` value. This means that it doesn't provide `any` type safety, and it's possible to pass in an array of a different type than you expect.
+
+
+```
+function firstElementBad(arr: any[]): any {
+  return arr[0];
+}
+
+const myArray = ['hello', 'world'];
+const first = firstElementBad(myArray);
+console.log(first.toUpperCase()); // Error: first.toUpperCase is not a function
+```
+
+In the code above, we're passing in an array of strings, but since the firstElementBad function doesn't provide any type information, it doesn't know that the array contains strings. As a result, the first variable is assigned the value 'hello', but since first is defined as type any, TypeScript doesn't know that it's a string. When we try to call the toUpperCase method on first, TypeScript raises a runtime error, because it doesn't know that first is a string and doesn't have a toUpperCase method.
+
+
+This kind of error can be hard to catch at compile time, and can lead to unexpected behavior and runtime errors in your code. By using generics and providing more specific type information, you can avoid these kinds of errors and make your code more type safe
+
+
+```
+function firstElement<T>(arr: T[]): T {
+  return arr[0];
+}
+
+
+const myArray = ['Hello', 'hi', 'how'];
+const first = firstElement<number>(myArray); // returns 'Hello'
+```
+
+TypeScript can ensure that you're getting the correct type of value back, and you can use the firstElement function with any type of array.
+
+[[^]](#jsinterview)
+## Interface
+
+an interface is a way to define a contract for an object, specifying the properties and methods that the object must have. It is a type that defines the shape of an object, but does not provide an implementation.
+
+An interface can be thought of as a set of rules or requirements that an object must follow in order to be considered a valid implementation of the interface. For example, if you have an interface called User that defines a property called name, any object that implements the User interface must have a property called name of a specific type.
+
+```
+interface User {
+  name: string;
+  age: number;
+  email?: string;
+  sayHello(): void;
+}
+```
+[[^]](#jsinterview)
+## Type vs Interface
+
+ Both type and interface can be used to define custom types, but they have some differences in terms of their syntax and intended use.
+
+ * syntax
+
+ ```
+ type Age = number;
+
+ interface Person {
+  name: string;
+  age: number;
+}
+```
+* use
+
+Interfaces are primarily used to define contracts for objects, specifying the properties and methods that an object must have. Interfaces can also be extended and merged together to create more complex interfaces.
+
+Types, on the other hand, are used to create aliases for other types. This is useful when you want to create a shorter, more readable name for a complex type or a union of types.
+
+* Extensibility
+
+Interfaces can be extended to create more specific interfaces that inherit properties from the base interface.
+
+```
+interface Person {
+  name: string;
+}
+
+interface Employee extends Person {
+  salary: number;
+}
+```
+Types cannot be extended in the same way, but they can be combined using the | operator to create union types:
+
+```
+type Age = number;
+type Name = string;
+type AgeOrName = Age | Name;
+```
+[[^]](#jsinterview)
+## DOM
+
+The DOM is a tree-like structure, where each element of an HTML document is represented by a node in the tree. The root of the tree is the document object, which represents the entire HTML document. Other nodes in the tree represent HTML elements, such as `<html>, <head>, <body>, and <div>,` as well as text nodes, attribute nodes, and other types of nodes.
+
+HTML is used to structure the web pages and Javascript is used to add behavior to our web pages. When an HTML file is loaded into the browser, the javascript can not understand the HTML document directly. So, a corresponding document is created(DOM). DOM is basically the representation of the same HTML document but in a different format with the use of objects. Javascript interprets DOM easily i.e javascript can not understand the `tags(<h1>H</h1>)` in HTML document but can understand object h1 in DOM. Now, Javascript can access each of the objects (h1, p, etc) by using different functions.
+
+![DOM](https://media.geeksforgeeks.org/wp-content/uploads/DOM.png)
+
+[[^]](#jsinterview)
+
+## CSS Framework
+
+A CSS framework is a pre-written collection of CSS files, which contain a set of rules and guidelines for styling HTML elements. It's a standardized approach to web development that makes it easier and faster to create consistent, responsive and mobile-friendly web designs.
+
+[[^]](#jsinterview)
+## Display Flex
+
+The Flexible Box Module, usually referred to as flexbox, as a method that could offer space distribution between items in an interface and powerful alignment capabilities.
+
+The main axis is defined by `flex-direction`, which has four possible values:
+
+* row
+* row-reverse
+* column
+* column-reverse
+
+[[^]](#jsinterview)
+
+## Display Properties
+
+The `display` property specifies the display behavior (the type of rendering box) of an element.
+
+```p.ex1 {display: none;}
+p.ex2 {display: inline;}
+p.ex3 {display: block;}
+p.ex4 {display: inline-block;}
+```
+
+**none**	The element is completely removed
+
+**inline**	Displays an element as an inline element `(like <span>)`. Any height and width properties will have no effect
+
+**block	Displays** an element as a block element `(like <p>)`. It starts on a new line, and takes up the whole width
+
+**inline-block**	Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values
+
+[[^]](#jsinterview)
+
+## CSS BOX Model
+
+![CSS Box Model](https://www.freecodecamp.org/news/content/images/2021/08/Screenshot-2021-08-29-at-3.13.33-PM.png)
+
+[[^]](#jsinterview)
+
+## Position Properties
+
+The `position` property specifies the type of positioning method used for an element `(static, relative, absolute, fixed, or sticky).`
+
+**Static**	Default value. Elements render in order, as they appear in the document flow,The element is positioned according to the normal flow of the document. The top, right, bottom, left, and z-index properties have no effect. This is the default value.
+
+**position: relative** works the same way as position: static;, but it lets you change an element's position.
+
+But just writing this CSS rule alone will not change anything.
+
+To modify the position, you'll need to apply the` top, bottom, right, and left` properties mentioned earlier and in that way specify where and how much you want to move the element.
+
+**Absolute** The element is removed from the normal document flow, and no space is created for the element in the page layout. It is positioned relative to its closest positioned ancestor, if any; otherwise, it is placed relative to the initial containing block. Its final position is determined by the values of top, right, bottom, and left.
+
+**The fixed** positioning property helps to put the text fixed on the browser. This fixed test is positioned relative to the browser window, and doesn't move even you scroll the window.
+
+**Sticky** It's treated as relatively positioned until its containing block crosses a specified threshold (such as setting top to value other than auto) within its flow root (or the container it scrolls within), at which point it is treated as "stuck" until meeting the opposite edge of its containing block.
+
+**z-index**	It is used to set stack order of an element.
+
+[[^]](#jsinterview)
+
+## Pseudo element & pseudo class
+
+**Pseudo element** : A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+
+Style the first letter, or line, of an element
+Insert content before, or after, the content of an element
+```
+selector::pseudo-element {
+  property: value;
+}
+
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+```
+
+>The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was an attempt from W3C to distinguish between pseudo-classes and pseudo-elements.
+
+**A pseudo-class** is used to define a special state of an element.
+
+For example, it can be used to:
+
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+```
+selector:pseudo-class {
+  property: value;
+}
+
+/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}
+
+```
+:first-child	p:first-child	Selects every `<p>` elements that is the first child of its parent
+
+:nth-child(n)	p:nth-child(2)	Selects every `<p>` element that is the second child of its parent
+
+:nth-last-child(n)	p:nth-last-child(2)	Selects every `<p>` element that is the second child of its parent, counting from the last child
+
+[[^]](#jsinterview)
+
+## Angular bootstrap
+
+1. ANGULAR.JSON File </br>
+ANGULAR.JSON is the file which has various properties and configuration of your Angular project. This is the file which is first referred by the builder to look for all the paths and configurations and to check which is the main file.
+
+```
+"options":{  
+    "outputPath":"dist/hello-world",
+    "index":"src/index.html",
+    "main":"src/main.ts",  // THIS LINE
+    "polyfills":"src/polyfills.ts",
+    "tsConfig":"src/tsconfig.app.json",
+    "assets":[  
+       "src/favicon.ico",
+       "src/assets"
+     ],
+    "styles":[  
+       "node_modules/bootstrap/dist/css/bootstrap.min.css",
+       "src/styles.css"
+     ],
+    "scripts":[],
+    "es5BrowserSupport":true
+}
+```
+
+2. MAIN.TS </br>
+This file acts as the entry point of the application. After this, main.ts file calls the function bootstrapModule(AppModule) which tells the builder to bootstrap the app.
+
+```
+platformBrowserDynamic().bootstrapModule(AppModule)
+```
+
+3. APP.MODULE.TS </br>
+This is the module, created with the @NgModule decorator, which has declarations of all the components we are creating within the app module so that angular is aware of them. Here, we also have imports array where we can import other modules and use in our app.
+
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { TestComponent } from './test/test.component';
+@NgModule({
+   declarations: [
+      AppComponent,
+      TestComponent
+   ],
+   imports: [
+      BrowserModule,
+      FormsModule
+   ],
+   providers: [],
+   bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+4. APP.COMPONENT.TS </br>
+This is the file which interacts with the html of the webpage and serves it with the data. The component is made by using @Component decorator which is imported from @angular/core. The component has a selector, which is like a custom html tag which we can use to call that component. It then has template or templateUrl which contains the html of the page to be displayed. It also has the styleUrls array where component specific style sheets can be placed.
+
+```
+import { Component } from '@angular/core';
+@Component({
+   selector: 'app-root',
+   templateUrl: './app.component.html',
+   styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+   title = 'hello-world';
+}
+```
+
+5. INDEX.HTML </br>
+Now, since angular is well aware of the modules, components, styles, scripts etc. which are required to display the page.</br>
+ the index.html file is called. It is found in the src folder of the app. Compiler dynamically adds all the javascript files at the end of this file. Since all the components are now known, the html file calls the root component that is app-root. 
+ ```
+ <!doctype html>
+ <html lang="en">
+    <head>
+       <meta charset="utf-8">
+       <title>My Hello World App!</title>
+       <base href="/">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+       <app-root></app-root>
+    </body>
+ </html>
+ ```
+
+ 6. APP.COMPONENT.HTML </br>
+This is the file which contains all the html elements and their binding which are to be displayed when the app loads. Contents of this file are the first things to be displayed.
