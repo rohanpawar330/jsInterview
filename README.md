@@ -1,26 +1,28 @@
 # jsInterview
 
-* [HTTP vs HTTPS](#http-vs-https)
-* [Http methods](#http-methods)
-* [Javascript is single-threaded](#javascript-is-single-threaded)
-* [web-workers](#web-workers)
-* [null vs undefined](#null-vs-undefined)
-* [Put vs Post http request](#put-vs-post-http-request)
-* [call, apply & bind](#call-apply--bind)
-* [SOLID principals in js](#solid-principals-in-js)
-* [jit & aot](#jit--aot)
-* [ProvidedIn in Angular](#providerin-in-angular)
-* [Change detection in angular](#change-detection-in-angular)
-* [Encapsulation](#encapsulation)
-* [Directive & Component & Pipes](#directive--component--pipes)
+- [HTTP vs HTTPS](#http-vs-https)
+- [Http methods](#http-methods)
+- [Javascript is single-threaded](#javascript-is-single-threaded)
+- [web-workers](#web-workers)
+- [null vs undefined](#null-vs-undefined)
+- [Put vs Post http request](#put-vs-post-http-request)
+- [call, apply & bind](#call-apply--bind)
+- [SOLID principals in js](#solid-principals-in-js)
+- [jit & aot](#jit--aot)
+- [ProvidedIn in Angular](#providerin-in-angular)
+- [Change detection in angular](#change-detection-in-angular)
+- [Encapsulation](#encapsulation)
+- [Directive & Component & Pipes](#directive--component--pipes)
 
 ## js work
 
+[[^]](#jsinterview)
 
 ## http vs https
 
-<b>HTTP vs HTTPS</b> : HTTP stands for Hypertext Transfer Protocol,used for transferring data over a network. Most information that is sent over the Internet, including website content and API calls, uses the HTTP protocol. 
+<b>HTTP vs HTTPS</b> : HTTP stands for Hypertext Transfer Protocol,used for transferring data over a network. Most information that is sent over the Internet, including website content and API calls, uses the HTTP protocol.
 An HTTP request is just a series of lines of text that follow the HTTP protocol. A GET request might look like
+
 ```
 GET /hello.txt HTTP/1.1
 User-Agent: curl/7.63.0 libcurl/7.63.0 OpenSSL/1.1.l zlib/1.2.11
@@ -36,7 +38,6 @@ The S in HTTPS stands for "secure." HTTPS uses TLS (or SSL) to encrypt HTTP requ
 
 Instead of:
 
-
 ```
 GET /hello.txt HTTP/1.1
 User-Agent: curl/7.63.0 libcurl/7.63.0 OpenSSL/1.1.l zlib/1.2.11
@@ -49,26 +50,31 @@ The attacker sees something like:
 ```
 t8Fw6T8UV81pQfyhDkhebbz7+oiwldr1j2gHBB3L3R
 ```
+
 `TLS` uses a technology called public key `cryptography`: there are two keys, a public key and a private key, and the public key is shared with client devices via the server's SSL certificate. When a client opens a connection with a server, the two devices use the public and private key to agree on new keys, called session keys, to encrypt further communications between them.
 
 All HTTP requests and responses are then encrypted with these session keys, so that anyone who intercepts communications can only see a random string of characters, not the plaintext
 
 This prevents or helps block a number of attacks that are possible when there is no authentication, such as:
 
-* On-path attacks
-* DNS hijacking
-* BGP hijacking
-* Domain spoofing
+- On-path attacks
+- DNS hijacking
+- BGP hijacking
+- Domain spoofing
+
+[[^]](#jsinterview)
 
 ## Javascript is single-threaded
 
-_JavaScript_ is called a ***"single-threaded"*** language because it can only execute one piece of code at a time. This means that if one function is running, it has to finish before another function can start.
+_JavaScript_ is called a **_"single-threaded"_** language because it can only execute one piece of code at a time. This means that if one function is running, it has to finish before another function can start.
 
-JavaScript has a single `call stack`, which is a data structure used by the JavaScript engine to keep track of which functions are currently running and in what order. 
+JavaScript has a single `call stack`, which is a data structure used by the JavaScript engine to keep track of which functions are currently running and in what order.
 
 JavaScript code must be written in a way that avoids long-running or blocking operations, as these can cause the user interface to freeze and become unresponsive.
 
 JavaScript is single-threaded, it can still make use of asynchronous operations like _callbacks, promises, and async/await_ to handle multiple tasks without blocking the main thread. Additionally, modern web browsers have introduced Web Workers, which allow JavaScript code to run in separate threads for heavy computation, but these are still relatively limited in use.
+
+[[^]](#jsinterview)
 
 ## web-workers
 
@@ -114,6 +120,8 @@ function performLongRunningTask() {
 
 ```
 
+[[^]](#jsinterview)
+
 ## null vs undefined
 
 **null** and **undefined** are both special values that represent absence of a value, but they are not the same thing.
@@ -121,6 +129,7 @@ function performLongRunningTask() {
 undefined is a primitive value that is automatically assigned to a variable that has been declared but has not been assigned a value, or to a function argument that has not been passed a value. It can also be explicitly assigned to a variable, indicating the intentional absence of a value.
 
 For example:
+
 ```
 let x; // variable x is undefined
 console.log(x); // output: undefined
@@ -135,6 +144,7 @@ foo(); // calling function foo with no arguments
 null, on the other hand, is a special value that represents the intentional absence of any object value. It is typically used as a way of indicating that a variable should have no value or that an object property should be empty.
 
 For example:
+
 ```let x = null; // variable x has no value
 console.log(x); // output: null
 
@@ -145,7 +155,9 @@ let obj = {
 console.log(obj.prop2); // output: null
 ```
 
-**It's important to note that null is an object in JavaScript, whereas undefined is a primitive value. This means that null can be assigned to an object, but not to a primitive type like a number or a string.
+\*\*It's important to note that null is an object in JavaScript, whereas undefined is a primitive value. This means that null can be assigned to an object, but not to a primitive type like a number or a string.
+
+[[^]](#jsinterview)
 
 ## Http methods
 
@@ -163,6 +175,8 @@ HTTP (Hypertext Transfer Protocol) is a protocol used for communication between 
 
 Each HTTP method has a specific set of rules and restrictions for how it should be used, and each method is associated with a specific set of status codes that indicate the outcome of the request. For example, a successful GET request typically results in a 200 OK status code, while a failed POST request might result in a 400 Bad Request or 500 Internal Server Error status code, depending on the nature of the error.
 
+[[^]](#jsinterview)
+
 ## Put vs Post http request
 
 PUT and POST are both HTTP methods used to send data to a server in JavaScript and other programming languages, but they have different purposes and usage.
@@ -170,6 +184,7 @@ PUT and POST are both HTTP methods used to send data to a server in JavaScript a
 The main difference between PUT and POST is that PUT is used to update an existing resource, while POST is used to create a new resource.
 
 Here is an example of a PUT request in JavaScript:
+
 ```const data = { title: 'Updated post', body: 'This is an updated post' };
 
 fetch('https://jsonplaceholder.typicode.com/posts/1', {
@@ -203,13 +218,13 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 
 In this example, we are creating a new post on the jsonplaceholder API using a POST request. The headers and body options are used to send JSON data to the server with the new post data.
 
-In general, you should use PUT when you want to update an existing resource, and use POST when you want to create a new resource. 
+In general, you should use PUT when you want to update an existing resource, and use POST when you want to create a new resource.
+
+[[^]](#jsinterview)
 
 ## call, apply & bind
 
-
 call, bind, and apply are three methods available on JavaScript function objects, which allow you to call or apply a function with a specific this value and arguments.
-
 
 Here are some scenarios where you might use call, bind, or apply:
 
@@ -266,6 +281,7 @@ const logSkills = saySkills.bind(null, ['JavaScript', 'HTML', 'CSS']);
 logSkills(); // Output: My skills are JavaScript, HTML, CSS.
 
 ```
+
 3. Creating a new function with a specific this value:
 
 ```
@@ -285,6 +301,7 @@ johnSaysHello(); // Output: Hello, my name is John and I'm 30 years old.
 ```
 
 4. Method borrowing:
+
 ```
 const cat = {
   name: 'Mittens',
@@ -301,6 +318,7 @@ const dog = {
 cat.meow.call(dog); // Output: Rover says "meow!"
 
 ```
+
 5. Function currying:
 
 ```
@@ -319,11 +337,13 @@ const result2 = multiplyByTen(3);
 console.log(result2); // Output: 30
 ```
 
+[[^]](#jsinterview)
+
 ## SOLID principals in js
 
 https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898
 
-The SOLID principles are a set of guidelines for writing maintainable and scalable software. 
+The SOLID principles are a set of guidelines for writing maintainable and scalable software.
 
 1. Single Responsibility Principle (SRP): A class or function should have only one reason to change. In JavaScript, this means that a function or object should have a single, well-defined purpose.
 
@@ -352,13 +372,15 @@ Example: Suppose you have a "DataFetcher" class that retrieves data from a datab
 
 In JavaScript, the SOLID principles can help you write clean and maintainable code. Here are some examples of how you can apply the SOLID principles in JavaScript:
 
+---
 
-------------------------------------------
+[[^]](#jsinterview)
 
 ## jit & aot
+
 https://www.geeksforgeeks.org/what-is-aot-and-jit-compiler-in-angular/
 
-
+[[^]](#jsinterview)
 
 ## providerIn in angular
 
@@ -370,7 +392,11 @@ previously it's happening that when we provide it in providers array it'll load 
 
 This has improved loading time...by not loading all service at once only when it;s associated component or module is loaded it's instance created.
 
+[[^]](#jsinterview)
+
 ## eager & lazy loading
+
+[[^]](#jsinterview)
 
 ## Change detection in angular
 
@@ -382,10 +408,9 @@ The change detectors provide a way to keep track of the component’s previous a
 
 There are two strategies for change detection in Angular:
 
-* **Default change detection strategy**: In this strategy, Angular checks for changes to all components and directives in the application on every change detection cycle. This can be inefficient in large applications with many components.
+- **Default change detection strategy**: In this strategy, Angular checks for changes to all components and directives in the application on every change detection cycle. This can be inefficient in large applications with many components.
 
-* **OnPush change detection strategy**: In this strategy, Angular only checks for changes to a component or directive when its input properties have changed or an event has been triggered. This can improve performance in some cases, but requires more careful management of component state and inputs.
-
+- **OnPush change detection strategy**: In this strategy, Angular only checks for changes to a component or directive when its input properties have changed or an event has been triggered. This can improve performance in some cases, but requires more careful management of component state and inputs.
 
 For OnPush :-
 
@@ -434,11 +459,14 @@ export class MyComponent {
   }
 }
 ```
+
 In this component, we have a myArray property of type string[]. When the updateArray() method is called, we push a new value onto the myArray array. Because myArray is a reference type, Angular cannot detect the change by comparing the current value with the previous value. Instead, Angular uses object identity to detect the change by comparing the memory address of the myArray array with the previous memory address. If the memory address is different, Angular will mark the component and its child components as dirty and trigger change detection.
 
 It's important to note that change detection for reference types can be a performance bottleneck, especially for large objects or arrays, because Angular has to check the memory address of each reference type during each change detection cycle. To optimize performance, you can use immutable objects or implement the OnPush change detection strategy, which can reduce the number of checks performed during change detection.
 
-## Encapsulation 
+[[^]](#jsinterview)
+
+## Encapsulation
 
 In Angular, a component is a basic building block that encapsulates a specific part of the application's functionality. A component consists of a template, which defines the layout and structure of the component, and a TypeScript class, which contains the logic for the component.
 
@@ -447,30 +475,32 @@ By default, Angular components use a feature called "view encapsulation" to hide
 ![encapsulation](https://miro.medium.com/v2/resize:fit:828/format:webp/1*-NoQdX9CsV1jeKLg9fPsng.png)
 
 1. None : In ViewEncapsulation.None option,
-There is no Shadow DOM.
-Style is not scoped to component.
-<br /><br />So when we run the application, h1 style will be applied to both the components even though we have only set style in AppComponent. It happens due to NONE option.
-<br /><br />
-In the browser, when we examine source code, we will find that h1 style has been declared in the head section of DOM. Thus, having no Shadow DOM and also style not scoped to the component, it affects all nodes of the DOM.
+   There is no Shadow DOM.
+   Style is not scoped to component.
+   <br /><br />So when we run the application, h1 style will be applied to both the components even though we have only set style in AppComponent. It happens due to NONE option.
+   <br /><br />
+   In the browser, when we examine source code, we will find that h1 style has been declared in the head section of DOM. Thus, having no Shadow DOM and also style not scoped to the component, it affects all nodes of the DOM.
 
 2. Native ( ShadowDom ): Native keyword is removed from ng v6 In ViewEncapsulation.ShadowDOM option,
-Style is scoped to the component.
-Angular will create Shadow DOM for the component.
-<br /><br />
-Applying Shadow Dom and using AppChildComponent as child inside template of AppComponent, we can find that h1 style is applied to both components even though we have only set style in AppComponent.
-<br /><br />
-In the browser, when we examine source code, we will find Shadow DOM is created for AppComponent and style is also applied to its child component.
+   Style is scoped to the component.
+   Angular will create Shadow DOM for the component.
+   <br /><br />
+   Applying Shadow Dom and using AppChildComponent as child inside template of AppComponent, we can find that h1 style is applied to both components even though we have only set style in AppComponent.
+   <br /><br />
+   In the browser, when we examine source code, we will find Shadow DOM is created for AppComponent and style is also applied to its child component.
 
 3. Emulated : is default mode in Angular where:
-Angular will not create Shadow DOM for component.
-Style will be scoped to the component.
-<br /><br />
-When we run this application, we will find h1 style from AppComponent is not applied to h1 of AppChildComponent because of emulated scoping. In this option, Angular only emulates to Shadow DOM and does not create a real Shadow DOM. Hence, styles are only scoped to the component.
-<br /><br />
-Examining it on the browser, Angular has created style in head section of the DOM and given an arbitrary ID to the component. On basis of ID, selector style is scoped to the component.
+   Angular will not create Shadow DOM for component.
+   Style will be scoped to the component.
+   <br /><br />
+   When we run this application, we will find h1 style from AppComponent is not applied to h1 of AppChildComponent because of emulated scoping. In this option, Angular only emulates to Shadow DOM and does not create a real Shadow DOM. Hence, styles are only scoped to the component.
+   <br /><br />
+   Examining it on the browser, Angular has created style in head section of the DOM and given an arbitrary ID to the component. On basis of ID, selector style is scoped to the component.
+
+[[^]](#jsinterview)
 
 ## Directive & Component & Pipes
 
 In Angular, the Component is the one that provides data to the view. It is used to create a new View(Shadow DOM) with attached behavior. Directives in Angular are primarily used to add additional behavior to an existing DOM element or an existing component instance.
 
- Pipes are for formatting data, and directives are to alter the behavior/appearance of an element
+Pipes are for formatting data, and directives are to alter the behavior/appearance of an element
