@@ -3,6 +3,37 @@
 ## Part-2
 
 - [HTML & HTML5 diff](#HTML-&-HTML5-diff)
+- [browser view document view](#browser-view--document-view)
+- [Center Elements in HTML with Different Methods](#center-elements-in-html-with-diff)
+- [Check Browser in User's Machine](#check-browser-in-user-machine)
+- [Context ('this') in JavaScript](#context--this-in-js)
+- [Currying in JavaScript](#curring-in-js)
+- [Data Types in JavaScript](#data-types-in-js)
+- [Deep Copy of an Object via Recursion](#deep-copy-via-recursion)
+- [Difference Between map() and forEach() in JavaScript](#diff-btw-map-foreach-in-js)
+- [Different Ways to Create Objects in JavaScript](#different-ways-to-create-objects-in-js)
+- [Document Object Model (DOM)](#dom)
+- [Even-Odd Coloring in CSS](#even-odd-coloring-in-css)
+- [Event Capturing and Event Bubbling in JavaScript](#event-capturing-and-events-bubbling-in-js)
+- [First-Class Functions and Pure Functions in JavaScript](#first-class-function-and-pure-function-in-js)
+- [HTML vs HTML5 Differences](#html--html5-diff)
+- [Input Types in HTML5](#input-types-in-html5)
+- [Is There Another Option Besides Explicit Promises to Handle Asynchronous Code in JavaScript?](#is-there-another-option-besides-explicit-promises-to-handle-asynchronous-code-in-javascript)
+- [Macro, Micro, and Event Loop](#macro-micro--event-loop)
+- [Positioning in CSS and Its Types](#positioning-in-css-types)
+- [Prototype and Prototype Inheritance in JavaScript](#prototype-and-prototype-inheritance-in-js)
+- [Pseudo-classes and Pseudo-elements](#pseudo-classes--pseudo-element)
+- [Selectors in CSS](#selectors-in-css)
+- [Synchronous, Asynchronous, and AMD Functions in JavaScript](#synchronous-amd-asynchronous-functions-in-js)
+- [Types of Storage in JavaScript](#type-of-storage-in-js)
+- [var, let, and const in JavaScript](#var-let--const-in-js)
+- [Webpack and Parcel Comparison](#webpack-and-parcel-comparison)
+- [Differences Between Arrow Functions and Function Expressions](#what-are-the-differences-between-arrow-functions-and-function-expressions)
+- [Five Key Data Structures in JavaScript](#what-are-the-five-key-data-structures-in-js)
+- [Closure in Programming](#what-does-closure-mean-in-programming)
+- [Generics in TypeScript](#what-is-generics-in-typescript)
+- [Difference Between a Type and an Interface in TypeScript](#what-is-the-difference-between-a-type-and-an-interface-in-typescript)
+- [Why is Fetch the Preferred Way to Send a Network Request via the Web Browser in JavaScript?](#why-is-fetch-the-preferred-way-to-send-a-network-request-via-the-web-browser-in-js)
 
 [[^]](#jsinterview)
 
@@ -65,12 +96,16 @@ Here are the key differences between HTML and HTML5, presented in a point-wise a
 
 8. Semantic markup:
    - HTML5 encourages the use of semantic markup for improved accessibility and SEO
+   
+[[^]](#jsinterview)
 
 ## DOM
 
 The DOM is created when a web page is loaded into a web browser. The browser parses the HTML document and constructs a representation of the document in memory as a DOM tree.
 
 This tree structure allows developers to access and manipulate the elements and content of the web page dynamically using programming languages like JavaScript.
+
+[[^]](#jsinterview)
 
 ## Browser View & Document View
 
@@ -90,6 +125,8 @@ This tree structure allows developers to access and manipulate the elements and 
   - Useful for developers and web designers.
   - Helps examine page structure, analyze code, troubleshoot issues, or make modifications.
   - Provides a technical perspective on the web page's building blocks.
+
+[[^]](#jsinterview)
 
 ## Check Browser in user machine
 
@@ -136,6 +173,8 @@ if (browserInfo) {
 }
 ```
 
+[[^]](#jsinterview)
+
 ## Type of storage in js
 
 In JavaScript, there are several types of storage options available for storing data:
@@ -147,6 +186,8 @@ In JavaScript, there are several types of storage options available for storing 
 3. Cookies: Cookies are small text files that are stored in the user's browser. They are commonly used for storing user preferences, session information, or tracking data. Cookies have limitations in terms of the amount of data they can store (usually limited to a few kilobytes) and are sent to the server with each HTTP request. You can create, read, and delete cookies using the `document.cookie` property.
 
 4. \*IndexedDB: IndexedDB is a powerful client-side database system that allows you to store and retrieve large amounts of structured data. It provides an asynchronous API for working with databases and supports advanced querying and indexing capabilities. IndexedDB is well-suited for web applications that require complex data management and offline capabilities.
+
+[[^]](#jsinterview)
 
 ## Webpack and parcel comparison
 
@@ -190,6 +231,8 @@ Webpack and Parcel are both popular bundlers for JavaScript applications, but th
 
 Overall, if you prefer a **highly customizable and configurable bundler with a mature ecosystem, Webpack may be the better choice**. On the other hand, if you value **simplicity, zero-configuration setups, and fast development iterations, Parcel provides a great out-of-the-box experience**. The choice between Webpack and Parcel ultimately depends on your project's requirements, complexity, and your preference for configuration flexibility versus zero-configuration simplicity.x
 
+[[^]](#jsinterview)
+
 ## input types in HTML5:
 
 1. Text: `<input type="text">` - A single-line text input field where users can enter alphanumeric text.
@@ -222,6 +265,8 @@ Overall, if you prefer a **highly customizable and configurable bundler with a m
 
 15. Reset: `<input type="reset">` - A button that resets the form fields to their default values.
 
+[[^]](#jsinterview)
+
 ## Positioning in CSS Types
 
 1. **Static**: The default position type for elements. Elements with `position: static` are positioned according to the normal flow of the document. Top, right, bottom, left, and z-index properties have no effect on statically positioned elements.
@@ -236,134 +281,40 @@ Overall, if you prefer a **highly customizable and configurable bundler with a m
 
 6. **Inherited**: In addition to the above position types, there is also the "inherited" position value. It means that an element inherits the position value from its parent. This is the case when the position property is not explicitly set on the element.
 
-## Center elements in html with diff
+Sure! Here are the topics you provided, enclosed within square brackets:
 
-There are several ways to center elements in HTML and CSS. Here are a few commonly used methods:
+- [Center Elements in HTML with Different Methods](#center-elements-in-html-with-diff)
+- [Check Browser in User's Machine](#check-browser-in-user-machine)
+- [Context ('this') in JavaScript](#context--this-in-js)
+- [Currying in JavaScript](#curring-in-js)
+- [Data Types in JavaScript](#data-types-in-js)
+- [Deep Copy of an Object via Recursion](#deep-copy-via-recursion)
+- [Difference Between map() and forEach() in JavaScript](#diff-btw-map-foreach-in-js)
+- [Different Ways to Create Objects in JavaScript](#different-ways-to-create-objects-in-js)
+- [Document Object Model (DOM)](#dom)
+- [Even-Odd Coloring in CSS](#even-odd-coloring-in-css)
+- [Event Capturing and Event Bubbling in JavaScript](#event-capturing-and-events-bubbling-in-js)
+- [First-Class Functions and Pure Functions in JavaScript](#first-class-function-and-pure-function-in-js)
+- [HTML vs HTML5 Differences](#html--html5-diff)
+- [Input Types in HTML5](#input-types-in-html5)
+- [Is There Another Option Besides Explicit Promises to Handle Asynchronous Code in JavaScript?](#is-there-another-option-besides-explicit-promises-to-handle-asynchronous-code-in-javascript)
+- [Macro, Micro, and Event Loop](#macro-micro--event-loop)
+- [Positioning in CSS and Its Types](#positioning-in-css-types)
+- [Prototype and Prototype Inheritance in JavaScript](#prototype-and-prototype-inheritance-in-js)
+- [Pseudo-classes and Pseudo-elements](#pseudo-classes--pseudo-element)
+- [Selectors in CSS](#selectors-in-css)
+- [Synchronous, Asynchronous, and AMD Functions in JavaScript](#synchronous-amd-asynchronous-functions-in-js)
+- [Types of Storage in JavaScript](#type-of-storage-in-js)
+- [var, let, and const in JavaScript](#var-let--const-in-js)
+- [Webpack and Parcel Comparison](#webpack-and-parcel-comparison)
+- [Differences Between Arrow Functions and Function Expressions](#what-are-the-differences-between-arrow-functions-and-function-expressions)
+- [Five Key Data Structures in JavaScript](#what-are-the-five-key-data-structures-in-js)
+- [Closure in Programming](#what-does-closure-mean-in-programming)
+- [Generics in TypeScript](#what-is-generics-in-typescript)
+- [Difference Between a Type and an Interface in TypeScript](#what-is-the-difference-between-a-type-and-an-interface-in-typescript)
+- [Why is Fetch the Preferred Way to Send a Network Request via the Web Browser in JavaScript?](#why-is-fetch-the-preferred-way-to-send-a-network-request-via-the-web-browser-in-js)
 
-1. Using CSS Flexbox:
-
-   ```html
-   <div class="container">
-     <div class="centered-element">Centered Content</div>
-   </div>
-   ```
-
-   ```css
-   .container {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 100vh; /* Adjust as needed */
-   }
-   ```
-
-2. Using CSS Grid:
-
-   ```html
-   <div class="container">
-     <div class="centered-element">Centered Content</div>
-   </div>
-   ```
-
-   ```css
-   .container {
-     display: grid;
-     place-items: center;
-     height: 100vh; /* Adjust as needed */
-   }
-   ```
-
-3. Using CSS Positioning (Absolute and Transform):
-
-   ```html
-   <div class="container">
-     <div class="centered-element">Centered Content</div>
-   </div>
-   ```
-
-   ```css
-   .container {
-     position: relative;
-     height: 100vh; /* Adjust as needed */
-   }
-
-   .centered-element {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-   }
-   ```
-
-4. Using CSS Positioning (Absolute and Margins):
-
-   ```html
-   <div class="container">
-     <div class="centered-element">Centered Content</div>
-   </div>
-   ```
-
-   ```css
-   .container {
-     position: relative;
-     height: 100vh; /* Adjust as needed */
-   }
-
-   .centered-element {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     margin: 0 auto;
-   }
-   ```
-
-5. Using CSS Text Alignment (for inline or inline-block elements):
-
-   ```html
-   <div class="container">
-     <span class="centered-element">Centered Content</span>
-   </div>
-   ```
-
-   ```css
-   .container {
-     text-align: center;
-     height: 100vh; /* Adjust as needed */
-   }
-
-   .centered-element {
-     display: inline-block;
-   }
-   ```
-
-## Selectors in css
-
-CSS selectors are patterns used to select and target specific HTML elements for styling.
-
-1. Element Selector: Targets elements based on their HTML tag name. For example:
-
-   ```css
-   p {
-     /* Styles applied to all <p> elements */
-   }
-   ```
-
-2. Class Selector: Targets elements with a specific class attribute value. Class names are preceded by a dot (.). For example:
-
-   ```css
-   .my-class {
-     /* Styles applied to elements with class="my-class" */
-   }
-   ```
-
-3. ID Selector: Targets a specific element based on its unique ID attribute value. ID names are preceded by a hash (#). For example:
-
-   ```css
-   #my-id {
-     /* Styles applied to the element with id="my-id" */
-   }
-   ```
+I hope this format helps you navigate through the topics easily! ```
 
 4. Attribute Selector: Targets elements based on their attribute values. For example:
 
@@ -406,6 +357,8 @@ CSS selectors are patterns used to select and target specific HTML elements for 
    ```
 
 9. Pseudo-Classes and Pseudo-Elements: Pseudo-classes allow you to select elements based on their state or position, such as `:hover`, `:active`, `:nth-child()`, etc. Pseudo-elements target specific parts of an element, such as `::before`, `::after`, `::first-line`, etc.
+
+[[^]](#jsinterview)
 
 ## Pseudo Classes & Pseudo Element
 
@@ -465,6 +418,8 @@ p::after {
 }
 ```
 
+[[^]](#jsinterview)
+
 ## Even odd coloring in CSS
 
 In CSS, the `:nth-child()` pseudo-class allows you to select elements based on their position within a parent container. One of the common uses of `:nth-child()` is to apply styles to elements based on their odd or even positions. Here's how it works:
@@ -482,6 +437,8 @@ li:nth-child(even) {
   background-color: #ffffff; /* Apply a different background color to even list items */
 }
 ```
+
+[[^]](#jsinterview)
 
 ## Prototype and Prototype Inheritance in JS
 
@@ -524,6 +481,8 @@ person2.greet(); // Output: Hello, my name is Bob
 In the above example, the `Person` constructor function has a prototype object that is shared among all instances created from it. We add a `greet` method to the prototype, and all instances of `Person` can access and use this method.
 
 Prototype-based inheritance allows objects to inherit properties and methods from their prototypes, providing a mechanism for code reuse and object composition in JavaScript.
+
+[[^]](#jsinterview)
 
 ## Different ways to create objects in js
 
@@ -604,6 +563,8 @@ There are several ways to create objects in JavaScript. Let's explore some of th
 
 These are just a few of the common ways to create objects in JavaScript. Each method has its own advantages and use cases. The choice of which method to use depends on the specific requirements of your code and the design patterns you follow.
 
+[[^]](#jsinterview)
+
 ## First class function and Pure function in js
 
 1. First-Class Functions:
@@ -670,6 +631,8 @@ These are just a few of the common ways to create objects in JavaScript. Each me
 
 Pure functions are deterministic and easier to reason about since they have no hidden dependencies or external state. They facilitate code that is easier to test, debug, and maintain.
 
+[[^]](#jsinterview)
+
 ## Curring in js
 
 Currying is a technique in JavaScript where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument. It allows you to partially apply a function by providing only a subset of its arguments, returning a new function that expects the remaining arguments. This technique is named after the mathematician Haskell Curry.
@@ -706,6 +669,8 @@ Currying allows you to create specialized functions from a more general function
 Currying can be achieved using various techniques in JavaScript, including manual function composition, using libraries like Lodash or Ramda, or leveraging language features like arrow functions and closures.
 
 Note that not all functions need to be curried, and it depends on the specific use case and programming style. Currying can enhance code reusability, functional composition, and make it easier to create specialized versions of functions.
+
+[[^]](#jsinterview)
 
 ## Event capturing and events bubbling in js
 
@@ -798,6 +763,8 @@ child.addEventListener(
 );
 ```
 
+[[^]](#jsinterview)
+
 ## Synchronous amd asynchronous functions in js
 
 1. Synchronous Functions:
@@ -848,6 +815,8 @@ In this example, the synchronousTask() function performs a time-consuming loop a
 
 Understanding the distinction between synchronous and asynchronous functions is crucial for managing time-consuming operations, handling I/O operations, and writing efficient code in JavaScript.
 
+[[^]](#jsinterview)
+
 ## Why is fetch the preferred way to send a network request via the web browser in js
 
 The `fetch()` function is commonly preferred for sending network requests in JavaScript because it provides a more modern and flexible approach compared to older methods like XMLHttpRequest (XHR). Here are some reasons why `fetch()` is favored:
@@ -870,6 +839,8 @@ It's worth mentioning that the `fetch()` API has some considerations and limitat
 
 Overall, the `fetch()` API is widely adopted due to its simplicity, standardization, and compatibility with modern JavaScript practices, making it the preferred method for sending network requests in web browsers.
 
+[[^]](#jsinterview)
+
 ## Is there another option, besides explicit promises, to handle asynchronous code in JavaScript?
 
 1. Callback Functions: Callback functions have been widely used to handle asynchronous operations in JavaScript before Promises became prevalent. With this approach, you pass a function as an argument to an asynchronous operation, and once the operation completes, the callback function is invoked. However, callback-based code can become complex and lead to callback hell when dealing with multiple asynchronous operations.
@@ -883,6 +854,8 @@ Overall, the `fetch()` API is widely adopted due to its simplicity, standardizat
 5. Async Library or Framework: There are various third-party libraries and frameworks, such as Async.js or Bluebird, that offer utilities and abstractions for handling asynchronous code. These libraries provide features like parallel execution, control flow, and error handling mechanisms to simplify asynchronous programming.
 
 While Promises are now a standard part of JavaScript and the most widely supported approach for handling asynchronous code, the alternatives mentioned above can still be useful in specific scenarios or for compatibility with older codebases. It's important to consider the specific requirements of your project and the level of browser or platform support when choosing the best approach for handling asynchronous code.
+
+[[^]](#jsinterview)
 
 ## What are the differences between arrow functions and function expressions
 
@@ -936,6 +909,8 @@ const funcExpr = function (x, y) {
 
 funcExpr(2, 3); // Output: 5
 ```
+
+[[^]](#jsinterview)
 
 ## What is the difference between a type and an interface in TypeScript?
 
@@ -1033,6 +1008,8 @@ if ("breed" in pet) {
 }
 ```
 
+[[^]](#jsinterview)
+
 ## What are the five key data structures in js
 
 In JavaScript, there are several key data structures that are commonly used. While there are more than five data structures available, here are five fundamental ones:
@@ -1046,6 +1023,8 @@ In JavaScript, there are several key data structures that are commonly used. Whi
 4. **Map**: A map is a data structure that stores key-value pairs, similar to an object. However, it provides additional functionality and guarantees the order of insertion. Maps allow efficient key-based operations like adding, updating, and retrieving values. They are commonly used when the order of elements or the ability to iterate over them in a specific order is important.
 
 5. **Stack**: A stack is a Last-In-First-Out (LIFO) data structure where elements are added and removed from the top. It follows the principle of "last in, first out." Stacks are used in various scenarios, such as managing function calls, undo/redo functionality, and evaluating expressions.
+
+[[^]](#jsinterview)
 
 ## Data types in js
 
@@ -1065,6 +1044,8 @@ In JavaScript, there are several key data structures that are commonly used. Whi
 4. Function: Represents a reusable block of code that can be invoked or called with arguments. Functions can take parameters, perform operations, and return values.
 
 5. BigInt: Represents integers with arbitrary precision, enabling the handling of numbers beyond the limitations of the Number data type.
+
+[[^]](#jsinterview)
 
 ## What is generics? In typescript
 
@@ -1110,10 +1091,9 @@ console.log(numberBox.value); // Output: 10
 console.log(stringBox.value); // Output: Hello
 ```
 
+[[^]](#jsinterview)
 
 ## What does closure mean in programming?
-
-
 
 1. Access to Outer Variables: A closure enables a function to access variables from its parent scope, even after the parent function has finished executing. This is possible because the inner function maintains a reference to its outer environment.
 
@@ -1129,7 +1109,7 @@ Here's an example to illustrate closures in JavaScript:
 
 ```javascript
 function outerFunction() {
-  var outerVariable = 'Hello';
+  var outerVariable = "Hello";
 
   function innerFunction() {
     console.log(outerVariable);
@@ -1146,5 +1126,361 @@ In the above example, the `innerFunction` is defined within the `outerFunction` 
 
 Closures are a powerful and fundamental concept in programming, providing a way to manage and encapsulate state within functions, leading to more flexible and expressive code.
 
+[[^]](#jsinterview)
 
+## var, let & const in JS
 
+In JavaScript, `var`, `let`, and `const` are used to declare variables. Each of them has a different scope and behavior, and hoisting affects them in distinct ways. Let's go through each of them:
+
+1. `var`: Variables declared with `var` have function scope or global scope, depending on where they are declared. When a function is defined, any variables declared with `var` within that function are hoisted to the top of the function scope. This means that you can access and use `var` variables before they are actually declared in the code. However, if `var` variables are declared outside of any function (i.e., in the global scope), they become properties of the global object (e.g., `window` object in browsers). Hoisting in the case of `var` moves the variable declarations to the top, but the assignments remain in the same place.
+
+2. `let`: Variables declared with `let` have block scope, which means they are only accessible within the block of code where they are defined (enclosed within curly braces `{}`). Unlike `var`, `let` variables are not hoisted to the top of their scope. If you try to access a `let` variable before its declaration, you'll encounter a "ReferenceError". It's important to note that the hoisting of `let` variables is limited to the temporal dead zone (TDZ) — the span of code between the variable's creation and its declaration.
+
+3. `const`: Variables declared with `const` also have block scope like `let`, but they are used to declare constants that cannot be reassigned once they are defined. Like `let`, `const` variables are not hoisted to the top of their scope and are subject to the TDZ. You need to assign a value to a `const` variable at the time of declaration, and subsequent reassignments will result in a "TypeError".
+
+Regarding functions:
+
+The `function` keyword is used to declare traditional functions in JavaScript. Function declarations are hoisted to the top of their scope, so you can call a function before its actual declaration in the code. Function declarations have their own scope, which is either the global scope or the function scope where they are defined. Function declarations also have their own `this` value.
+
+On the other hand, arrow functions (`() => {}`) were introduced in ECMAScript 6 and have a different behavior. Arrow functions do not have their own `this` value. Instead, they inherit the `this` value from the enclosing scope. Additionally, arrow functions do not have their own `arguments` object, but they can access the `arguments` object of the enclosing scope. Arrow functions are not hoisted like function declarations; they need to be defined before they are used.
+
+To summarize, `var` variables are function-scoped or globally scoped and are hoisted to the top of their scope, `let` and `const` variables are block-scoped and are not hoisted in a way that you can use them before their declaration, function declarations are hoisted and have their own scope, and arrow functions have lexical scoping, inherit `this` from the enclosing scope, and are not hoisted.
+
+```js
+console.log(x); // Output: undefined
+var x = 10;
+
+console.log(y); // ReferenceError: y is not defined
+let y = 20;
+
+const z = 30;
+z = 40; // TypeError: Assignment to constant variable.
+
+hoistedFunction(); // Output: "I'm a hoisted function!"
+function hoistedFunction() {
+  console.log("I'm a hoisted function!");
+}
+
+nonHoistedFunction(); // TypeError: nonHoistedFunction is not a function
+var nonHoistedFunction = function () {
+  console.log("I'm not hoisted!");
+};
+
+arrowFunction(); // ReferenceError: arrowFunction is not defined
+const arrowFunction = () => {
+  console.log("I'm an arrow function!");
+};
+```
+
+In the code above, we have examples of var, let, and const variables, as well as function declarations and arrow functions.
+
+- The var x declaration is hoisted to the top of its scope, so even though the variable is accessed before the declaration, it outputs undefined.
+
+- The let y declaration is not hoisted, so trying to access it before the declaration results in a "ReferenceError".
+
+- The const z declaration is also not hoisted, and since const variables cannot be reassigned, the subsequent assignment to z throws a "TypeError".
+
+- The hoistedFunction is a function declaration, which is hoisted to the top of its scope. Therefore, it can be called before its actual declaration in the code.
+
+- The nonHoistedFunction is assigned to a function expression using var. Since var variables are hoisted but the assignment remains in place, calling nonHoistedFunction before the assignment results in a "TypeError" because it is undefined at that point.
+
+- The arrowFunction is an arrow function assigned to a const variable. Arrow functions are not hoisted, so trying to call arrowFunction before its declaration in the code leads to a "ReferenceError".
+
+[[^]](#jsinterview)
+
+## context & this in jS
+
+In JavaScript, the `this` keyword refers to the current execution context or the object to which a function belongs. The value of `this` is determined dynamically based on how a function is called. Understanding the context and behavior of `this` is crucial for proper function invocation and accessing object properties. Here are some important points to consider:
+
+1. Global Context: In the global scope (outside of any function), `this` refers to the global object. In a browser environment, the global object is `window`, while in Node.js, it is `global`.
+
+2. Function Context: When a function is called as a method of an object, `this` points to the object that owns the method. For example:
+
+```javascript
+const person = {
+  name: "John",
+  greet: function () {
+    console.log("Hello, my name is " + this.name);
+  },
+};
+
+person.greet(); // Output: Hello, my name is John
+```
+
+In this case, within the `greet` method, `this` refers to the `person` object.
+
+3. Constructor Context: When a function is used as a constructor with the `new` keyword, `this` refers to the newly created object instance. Constructors are typically defined using function declarations or expressions and are intended to create multiple instances of an object with shared properties and methods. For example:
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+const john = new Person("John");
+console.log(john.name); // Output: John
+```
+
+Here, `this` inside the `Person` constructor refers to the newly created `Person` object (`john`).
+
+4. Explicit Context: The `this` context can be explicitly set using `call()`, `apply()`, or `bind()` methods, which allow you to specify the value of `this` when calling a function. For example:
+
+```javascript
+function greet() {
+  console.log("Hello, " + this.name);
+}
+
+const person = {
+  name: "John",
+};
+
+greet.call(person); // Output: Hello, John
+```
+
+In this case, `call()` is used to invoke the `greet` function with `this` explicitly set to the `person` object.
+
+5. Arrow Functions Context: Arrow functions have a lexical `this` context, which means that `this` is inherited from the enclosing (parent) scope and does not have its own `this` value. Arrow functions are not suitable for methods that need dynamic context, but they are commonly used in callback functions or for preserving the outer `this` value. For example:
+
+```javascript
+const person = {
+  name: "John",
+  greet: function () {
+    setTimeout(() => {
+      console.log("Hello, my name is " + this.name);
+    }, 1000);
+  },
+};
+
+person.greet(); // Output (after 1 second): Hello, my name is John
+```
+
+In the above code, the arrow function inside the `setTimeout` callback preserves the `this` value from the `greet` method, allowing it to access the `name` property of the `person` object.
+
+Understanding the context and behavior of `this` is essential for proper JavaScript programming, as it determines how functions interact with objects and enables dynamic behavior based on the execution context.
+
+---
+
+```js
+const obj = {
+  a: this,
+  b: function () {
+    return this;
+  },
+  c: () => {
+    return this;
+  },
+  d() {
+    return this;
+  },
+  e: function () {
+    return this.a;
+  },
+};
+```
+
+Certainly! Let's consider an improved example to illustrate the different contexts of the `this` keyword within the `obj` object:
+
+```javascript
+const obj = {
+  a: this,
+  b: function () {
+    return this;
+  },
+  c: () => {
+    return this;
+  },
+  d() {
+    return this;
+  },
+  e: function () {
+    return this.a;
+  },
+};
+
+console.log(obj.a); // Output: [object Window] (Referring to the global object)
+console.log(obj.b()); // Output: {b: ƒ, d: ƒ, e: ƒ} (Referring to the object 'obj')
+console.log(obj.c()); // Output: [object Window] (Referring to the global object)
+console.log(obj.d()); // Output: {b: ƒ, d: ƒ, e: ƒ} (Referring to the object 'obj')
+console.log(obj.e()); // Output: undefined (Referring to the 'a' property of 'undefined')
+```
+
+In this example, the behavior of `this` can be observed as follows:
+
+1. Property `a: this`: When `obj.a` is accessed, `this` refers to the global object (`[object Window]` in a browser environment). This happens because the object literal does not have its own scope, and therefore `this` in this context points to the global object.
+
+2. Method `b: function() {...}`: When `obj.b()` is called, `this` inside the function refers to the object `obj`. It returns the object `obj` itself (`{b: ƒ, d: ƒ, e: ƒ}`) since `this` is bound to the object it is called upon.
+
+3. Property `c: () => {...}` (Arrow function): In this case, the arrow function captures the `this` value from the surrounding (lexical) scope, which is the global object. Hence, calling `obj.c()` returns the global object (`[object Window]`).
+
+4. Method `d() {...}` (Shorthand method): Similar to method `b`, the shorthand method `d` also has `this` bound to the object `obj` when `obj.d()` is called. Therefore, it returns the object `obj` itself (`{b: ƒ, d: ƒ, e: ƒ}`).
+
+5. Method `e: function() {...}`: Inside the `e` method, `this.a` is used to access the `a` property of the object `obj`. However, since `obj.e()` is called from within `obj` itself, `this` inside `obj.e()` refers to the object `obj`. However, the object `obj` does not have a property `a`, so it returns `undefined`.
+
+By analyzing the output of each console.log statement, we can observe the different values of `this` depending on the context in which it is used within the `obj` object.
+
+[[^]](#jsinterview)
+
+## Diff btw .map &.forEach in js
+
+`forEach` and `map` are both array methods in JavaScript, used for iterating over elements in an array. However, they have some differences in terms of their purpose and the return values they provide.
+
+1. Purpose:
+
+   - `forEach`: The `forEach` method is used to execute a provided callback function once for each element in an array. It is mainly used for performing side effects, such as modifying the array, updating external variables, or logging values.
+   - `map`: The `map` method, on the other hand, is used to create a new array by applying a transformation function to each element of the original array. It is specifically designed to generate a new array based on the modified values from the original array, without modifying the original array itself.
+
+2. Return Value:
+
+   - `forEach`: The `forEach` method does not return a new array. It simply iterates over each element in the array and executes the provided callback function. The return value of the `forEach` method is always `undefined`.
+   - `map`: The `map` method returns a new array containing the results of applying the provided callback function to each element of the original array. It creates a transformed array with the same length as the original array.
+
+3. Usage and Effects:
+   - `forEach`: Since the primary purpose of `forEach` is to perform side effects, such as modifying the array or updating external variables, it is commonly used when you want to iterate over an array and perform some action on each element. It is suitable for scenarios where you don't need a new array as the result.
+   - `map`: The primary purpose of `map` is to transform each element of an array and create a new array based on the transformations. It is often used when you need to transform data or extract specific properties from the original array to generate a new array.
+
+Here's an example to illustrate the difference between `forEach` and `map`:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// Using forEach
+numbers.forEach((num) => {
+  console.log(num * 2); // Side effect: Logging the doubled value
+});
+// Output: 2, 4, 6, 8, 10
+// Return value: undefined
+
+// Using map
+const doubledNumbers = numbers.map((num) => {
+  return num * 2; // Transformation: Doubling each number
+});
+console.log(doubledNumbers);
+// Output: [2, 4, 6, 8, 10]
+// Return value: [2, 4, 6, 8, 10]
+```
+
+[[^]](#jsinterview)
+
+## macro, micro & event loop
+
+Certainly! Here's a short explanation with code:
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise");
+});
+
+console.log("End");
+```
+
+In this code, we have a mix of macro and micro tasks:
+
+1. `console.log('Start')`: This is a regular synchronous code that executes immediately and logs "Start" to the console.
+
+2. `setTimeout(() => {...}, 0)`: This represents a macro task, a timer event in this case. Even though the delay is set to 0 milliseconds, it is still considered a macro task. The callback function will be executed by the event loop after the current stack is empty. Therefore, it will be logged after other synchronous code.
+
+3. `Promise.resolve().then(() => {...})`: This represents a micro task. The `Promise.resolve()` creates a resolved promise, and the attached `then` callback is a micro task. Micro tasks have a higher priority than macro tasks and are executed before the next rendering or input event. Therefore, the callback function will be executed before the macro task. It will log "Promise" to the console.
+
+4. `console.log('End')`: This is another synchronous code that logs "End" to the console.
+
+Expected Output:
+
+```
+Start
+End
+Promise
+Timeout
+```
+
+The order of execution is as follows:
+
+- Synchronous code is executed first, so "Start" and "End" are logged to the console.
+- Micro tasks are processed before the next rendering or input event, so the micro task callback for the resolved promise is executed, logging "Promise" to the console.
+- Finally, the macro task callback inside the `setTimeout` is executed, logging "Timeout" to the console.
+
+This demonstrates the event loop's behavior, where micro tasks are processed before macro tasks, allowing for efficient handling of both high-priority operations (micro tasks) and lower-priority operations (macro tasks).
+
+---
+
+```javascript
+console.log(1);
+setTimeout(() => console.log(2), 0);
+Promise.resolve().then(() => console.log(3));
+setTimeout(() => console.log(4), 1);
+console.log(5);
+```
+
+Explanation:
+
+1. `console.log(1)`: This is a synchronous code that logs `1` to the console immediately.
+
+2. `setTimeout(() => console.log(2), 0)`: This represents a macro task, a timer event with a delay of 0 milliseconds. Even though the delay is set to 0, the callback function is still considered a macro task. It will be queued in the task queue and executed by the event loop after the current stack is empty.
+
+3. `Promise.resolve().then(() => console.log(3))`: This represents a micro task. The `Promise.resolve()` creates a resolved promise, and the attached `then` callback is a micro task. Micro tasks have a higher priority than macro tasks and are executed before the next rendering or input event. The micro task callback will be executed before the next macro task.
+
+4. `setTimeout(() => console.log(4), 1)`: This is another macro task, a timer event with a delay of 1 millisecond. The callback function will be queued in the task queue and executed after the current stack is empty and at least 1 millisecond has passed.
+
+5. `console.log(5)`: This is a synchronous code that logs `5` to the console immediately.
+
+Expected Output:
+
+```
+1
+5
+3
+2
+4
+```
+
+Explanation of the output:
+
+- Synchronous code is executed first, so `1` is logged to the console.
+- Then, `setTimeout(() => console.log(2), 0)` is encountered. It is a macro task, so it is queued in the task queue.
+- `Promise.resolve().then(() => console.log(3))` is a micro task, which is executed before the next macro task. So, `3` is logged to the console.
+- Next, `console.log(5)` is executed, logging `5` to the console.
+- Now, the event loop moves to the task queue and executes the first macro task, which is `setTimeout(() => console.log(2), 0)`. Hence, `2` is logged to the console.
+- Finally, the last macro task `setTimeout(() => console.log(4), 1)` is executed, and `4` is logged to the console.
+
+This order of execution demonstrates the event loop behavior, where micro tasks are executed before the next macro task, even if they were enqueued later.
+
+[[^]](#jsinterview)
+
+## Deep copy via recursion
+
+```js
+function deepCopy(obj) {
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  let copy = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      copy[key] = deepCopy(obj[key]);
+    }
+  }
+
+  return copy;
+}
+
+const obj = {
+  a: 1,
+  b: "hello",
+  c: {
+    d: "world",
+  },
+  e: {
+    f: {
+      g: 100,
+    },
+  },
+};
+
+const deepCopyObj = deepCopy(obj);
+```
