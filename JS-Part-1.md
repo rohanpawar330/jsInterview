@@ -1,7 +1,5 @@
 # jsInterview
 
-## Part-2
-
 - [HTML & HTML5 diff](#HTML-&-HTML5-diff)
 - [browser view document view](#browser-view--document-view)
 - [Center Elements in HTML with Different Methods](#center-elements-in-html-with-diff)
