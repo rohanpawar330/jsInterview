@@ -73,9 +73,7 @@ This prevents or helps block a number of attacks that are possible when there is
 - BGP hijacking
 - Domain spoofing
 
-[[^]](#jsinterview)
 
-## Javascript is single-threaded
 [[^]](#jsinterview)
 ## Javascript is single-threaded 
 
@@ -87,9 +85,7 @@ JavaScript code must be written in a way that avoids long-running or blocking op
 
 JavaScript is single-threaded, it can still make use of asynchronous operations like _callbacks, promises, and async/await_ to handle multiple tasks without blocking the main thread. Additionally, modern web browsers have introduced Web Workers, which allow JavaScript code to run in separate threads for heavy computation, but these are still relatively limited in use.
 
-[[^]](#jsinterview)
 
-## web-workers
 [[^]](#jsinterview)
 ## web-workers 
 
@@ -135,9 +131,7 @@ function performLongRunningTask() {
 
 ```
 
-[[^]](#jsinterview)
 
-## null vs undefined
 [[^]](#jsinterview)
 ## null vs undefined 
 
@@ -174,9 +168,7 @@ console.log(obj.prop2); // output: null
 
 \*\*It's important to note that null is an object in JavaScript, whereas undefined is a primitive value. This means that null can be assigned to an object, but not to a primitive type like a number or a string.
 
-[[^]](#jsinterview)
 
-## Http methods
 [[^]](#jsinterview)
 ## Http methods 
 
@@ -194,9 +186,6 @@ HTTP (Hypertext Transfer Protocol) is a protocol used for communication between 
 
 Each HTTP method has a specific set of rules and restrictions for how it should be used, and each method is associated with a specific set of status codes that indicate the outcome of the request. For example, a successful GET request typically results in a 200 OK status code, while a failed POST request might result in a 400 Bad Request or 500 Internal Server Error status code, depending on the nature of the error.
 
-[[^]](#jsinterview)
-
-## Put vs Post http request
 [[^]](#jsinterview)
 ## Put vs Post http request 
 
@@ -241,9 +230,7 @@ In this example, we are creating a new post on the jsonplaceholder API using a P
 
 In general, you should use PUT when you want to update an existing resource, and use POST when you want to create a new resource.
 
-[[^]](#jsinterview)
 
-## call, apply & bind
 [[^]](#jsinterview)
 ## call, apply & bind 
 
@@ -360,9 +347,7 @@ const result2 = multiplyByTen(3);
 console.log(result2); // Output: 30
 ```
 
-[[^]](#jsinterview)
 
-## SOLID principals in js
 [[^]](#jsinterview)
 ## SOLID principals in js  
 
@@ -399,15 +384,12 @@ In JavaScript, the SOLID principles can help you write clean and maintainable co
 
 ---
 
-[[^]](#jsinterview)
 
-## jit & aot
 
 [[^]](#jsinterview)
 ## jit & aot 
 https://www.geeksforgeeks.org/what-is-aot-and-jit-compiler-in-angular/
 
-[[^]](#jsinterview)
 
 
 [[^]](#jsinterview)
@@ -421,16 +403,12 @@ previously it's happening that when we provide it in providers array it'll load 
 
 This has improved loading time...by not loading all service at once only when it;s associated component or module is loaded it's instance created.
 
-[[^]](#jsinterview)
 
-## eager & lazy loading
 [[^]](#jsinterview)
 ## eager & lazy loading 
 
 [[^]](#jsinterview)
 
-## Change detection in angular
-[[^]](#jsinterview)
 ## Change detection in angular 
 
 When you change any of your models, Angular detects the changes and immediately updates the views. This is change detection in Angular. The purpose of this mechanism is to make sure the underlying views are always in sync with their corresponding models.
@@ -497,9 +475,7 @@ In this component, we have a myArray property of type string[]. When the updateA
 
 It's important to note that change detection for reference types can be a performance bottleneck, especially for large objects or arrays, because Angular has to check the memory address of each reference type during each change detection cycle. To optimize performance, you can use immutable objects or implement the OnPush change detection strategy, which can reduce the number of checks performed during change detection.
 
-[[^]](#jsinterview)
 
-## Encapsulation
 [[^]](#jsinterview)
 ## Encapsulation  
 
@@ -532,9 +508,7 @@ By default, Angular components use a feature called "view encapsulation" to hide
    <br /><br />
    Examining it on the browser, Angular has created style in head section of the DOM and given an arbitrary ID to the component. On basis of ID, selector style is scoped to the component.
 
-[[^]](#jsinterview)
 
-## Directive & Component & Pipes
 [[^]](#jsinterview)
 ## Directive & Component & Pipes 
 
