@@ -32,6 +32,7 @@
 - [Generics in TypeScript](#what-is-generics-in-typescript)
 - [Difference Between a Type and an Interface in TypeScript](#what-is-the-difference-between-a-type-and-an-interface-in-typescript)
 - [Why is Fetch the Preferred Way to Send a Network Request via the Web Browser in JavaScript?](#why-is-fetch-the-preferred-way-to-send-a-network-request-via-the-web-browser-in-js)
+- [Name some of the core features of ES6]()
 
 [[^]](#jsinterview)
 
@@ -1577,3 +1578,31 @@ const obj = {
 
 const deepCopyObj = deepCopy(obj);
 ```
+
+## Name some of the core features of ES6
+
+ES6 (ECMAScript 2015) introduced several new features and enhancements to JavaScript. Some of the core features of ES6 include:
+
+1. Block-scoped variables: ES6 introduced the `let` and `const` keywords for declaring block-scoped variables, providing more control over variable scoping.
+
+2. Arrow functions: Arrow functions provide a concise syntax for writing anonymous functions and capture the surrounding `this` value automatically.
+
+3. Template literals: Template literals allow for easier string interpolation and multiline strings by using backticks (`).
+
+4. Destructuring assignment: Destructuring assignment allows for extracting values from arrays or objects into distinct variables using a concise syntax.
+
+5. Default function parameters: ES6 allows defining default values for function parameters, which are used when no argument is provided during function invocation.
+
+6. Rest and spread operators: The rest (`...`) and spread (`...`) operators enable working with variable-length argument lists, arrays, and objects in a more flexible manner.
+
+7. Classes: ES6 introduced the `class` syntax for creating class-based objects, providing a more familiar syntax for implementing object-oriented programming concepts.
+
+8. Modules: ES6 introduced a standardized module system with the `import` and `export` keywords, allowing for better organization and encapsulation of JavaScript code.
+
+9. Promises: Promises provide a more robust way of handling asynchronous operations, making it easier to write and manage asynchronous code compared to traditional callback-based approaches.
+
+10. Enhanced object literals: ES6 introduced enhancements to object literals, including concise method definitions, shorthand property syntax, and computed property names.
+
+These are just some of the core features introduced in ES6, which have significantly improved the JavaScript language and made it more powerful and expressive.
+
+
