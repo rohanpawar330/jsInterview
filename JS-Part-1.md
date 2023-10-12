@@ -1,6 +1,6 @@
 # jsInterview
 
-JS - Programs - [stackbliz]([https://stackblitz.com/edit/js-interview-rohanpawar?file=index.js]) 
+JS - Programs - [stackbliz](https://stackblitz.com/edit/js-interview-rohanpawar?file=index.js) 
 
 - [HTML & HTML5 diff](#HTML-&-HTML5-diff)
 - [browser view document view](#browser-view--document-view)
